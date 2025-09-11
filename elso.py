@@ -17,3 +17,34 @@ for i in range(100):
 print(szamok)
 
 
+# Változók létrehozása statisztika készítéshez
+jatek_szam = 0
+nem_talaldDB = 0
+
+# A kitalálandó szám kiválasztása a listából
+kitalalando_szam = szamok[random.randint(0, len(szamok))]
+
+
+# A JÁTÉK ---------------------------------------
+kitalalando_szam = 12
+
+jatszol = True
+
+while(jatszol):
+    tipp = int(input("Tipped? (egész szám): "))
+
+    while(tipp != kitalalando_szam):
+        tipp = int(input("Tipped? (egész szám): "))
+
+    print("Kitaláltad a kitalálandó számot!")
+
+    folytatas = input("Akarsz-e még játszani? [I/N]")
+    if(folytatas == "N"):
+        jatszol = False
+
+
+
+
+
+
+
