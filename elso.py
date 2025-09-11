@@ -30,11 +30,21 @@ kitalalando_szam = 12
 
 jatszol = True
 
-while(jatszol):
-    tipp = int(input("Tipped? (egész szám): "))
+while(jatszol):    
+    tipp_sz = input("Tipped? (egész szám): ").strip()
+    if(tipp_sz.isdecimal()):
+        tipp = int(tipp_sz)
+    else:
+        print("Egész számmal játsz!")
+        continue
 
     while(tipp != kitalalando_szam):
-        tipp = int(input("Tipped? (egész szám): "))
+        tipp_sz = input("Tipped? (egész szám): ").strip()
+        if(tipp_sz.isdecimal()):
+            tipp = int(tipp_sz)
+        else:
+            print("Egész számmal játsz!")
+            continue
 
     print("Kitaláltad a kitalálandó számot!")
 
