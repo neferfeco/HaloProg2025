@@ -51,7 +51,7 @@ while(jatszol):
         else:
             print("A kitalálandó szám kisebb!")            
         
-        tipp_sz = input("Tipped? (egész szám)\n[Kilépés \'X\' karakterrel]: ").strip()
+        tipp_sz = input("Tipped? (egész szám)[Kilépés \'X\' karakterrel]: ").strip()
         
         if(tipp_sz.isdecimal()):
             tipp = int(tipp_sz)
@@ -71,6 +71,7 @@ while(jatszol):
 
     """
     1. statisztika
+    hiba: belső ciklusban szöveg bevitelkor is kiírja hogy kisebb a szám
     """
 
 
