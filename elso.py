@@ -34,7 +34,9 @@ kitalalando_szam = 12
 
 jatszol = True
 
-while(jatszol):    
+while(jatszol):
+    jatek_szam += 1
+        
     tipp_sz = input("Tipped? (egész szám): ").strip()
     if(tipp_sz.isdecimal()):
         tipp = int(tipp_sz)
@@ -49,10 +51,12 @@ while(jatszol):
         else:
             print("A kitalálandó szám kisebb!")            
         
-        tipp_sz = input("Tipped? (egész szám): ").strip()
+        tipp_sz = input("Tipped? (egész szám)\n[Kilépés \'X\' karakterrel]: ").strip()
         
         if(tipp_sz.isdecimal()):
             tipp = int(tipp_sz)
+        elif tipp_sz == 'X':
+            exit()
         else:
             print("Egész számmal játsz!")
             continue
@@ -67,7 +71,6 @@ while(jatszol):
 
     """
     1. statisztika
-    2. menet közben - újrakezdés vagy kilépés 
     """
 
 
