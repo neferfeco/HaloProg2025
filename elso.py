@@ -76,10 +76,4 @@ while(jatszol):
 
 
 
-    """
-    1. statisztika
-    hiba: belső ciklusban szöveg bevitelkor is kiírja hogy kisebb a szám
-    """
-
-
 
