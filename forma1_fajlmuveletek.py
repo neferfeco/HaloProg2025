@@ -12,23 +12,23 @@ except IOError as ex:
 #print(verseny_adatok)
 
     """
-    1. Sorozatszámítás/összegzés
-    2. Kiválasztás
-    3. Megszámolás
-    4. Eldöntés 1
-        Eldöntés 2
-    5. Maximum/minimum kiválasztás
-    6. Keresés (lineáris)
+    1. [✔] Sorozatszámítás/összegzés
+    2. [✔] Kiválasztás
+    3. [✔] Megszámolás
+    4. [] Eldöntés 1
+       [] Eldöntés 2
+    5. [] Maximum/minimum kiválasztás
+    6. [] Keresés (lineáris)
     
-    7. Kiválogatás (külön, helyben)
-    8. Szétválogatás
-    9. Unió
-    10. Metszet
+    7. [] Kiválogatás (külön, helyben)
+    8. [] Szétválogatás
+    9. [] Unió
+    10.[] Metszet
     
     11. Rendezés
-        eygszerű cserés
-        buborékos
-        minimumkiválasztásos
+       [] egyszerű cserés
+       [] buborékos
+       [] minimumkiválasztásos
     """
 
 
@@ -42,10 +42,6 @@ atlag=pontszam/db
 print(f"Pontszámok átlaga: {atlag}")
 
 
-
-
-
-
 #2. Mi a bekért versenyzo adatai?
 pilota=input("Kérek egy pilótát:")
 ciklusvaltozo=1
@@ -53,12 +49,20 @@ while verseny_adatok[ciklusvaltozo].split(",")[0]!=pilota:
     ciklusvaltozo+=1
 print(verseny_adatok[ciklusvaltozo])
     
-    
+#3. Hány versenyző teljesitett 300 pont felett?
+db1=0
+for i in range (1,len(verseny_adatok)):
+    if (int(verseny_adatok[i].split(",")[1])>300):
+        db1+=1
+print(f"{db1} versenyző teljesített 300 pont felett")
 
 
 
-
-
+#4. Van-e 0 pntos versenyző?
+ciklusvaltozo2=1
+while int(verseny_adatok[ciklusvaltozo2].split(",")[1])!=0:
+    ciklusvaltozo2+=1
+   
 
 
 
