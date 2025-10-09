@@ -15,8 +15,8 @@ except IOError as ex:
     1. [✔] Sorozatszámítás/összegzés
     2. [✔] Kiválasztás
     3. [✔] Megszámolás
-    4. [] Eldöntés 1
-       [] Eldöntés 2
+    4. [✔] Eldöntés 1
+       [✔] Eldöntés 2
     5. [] Maximum/minimum kiválasztás
     6. [] Keresés (lineáris)
     
@@ -58,11 +58,23 @@ print(f"{db1} versenyző teljesített 300 pont felett")
 
 
 
-#4. Van-e 0 pntos versenyző?
-ciklusvaltozo2=1
-while int(verseny_adatok[ciklusvaltozo2].split(",")[1])!=0:
-    ciklusvaltozo2+=1
-   
-
-
-
+#4.1 Van-e 0 pntos versenyző?
+'''
+ciklusvaltozo=1
+while ciklusvaltozo<len(verseny_adatok) and int(verseny_adatok[ciklusvaltozo].split(",")[1])>0:
+    ciklusvaltozo+=1
+if ciklusvaltozo<len(verseny_adatok):
+    print("Van 0 pontos versenyző")
+else:
+    print("Nincs 0 pontos versenyző")
+'''
+#4.2 Mindenki szerzett pontot a 2024-es szezon alatt?
+ciklusvaltozo=1
+while ciklusvaltozo<len(verseny_adatok) and int(verseny_adatok[ciklusvaltozo].split(",")[1])>0:
+    ciklusvaltozo+=1
+print(ciklusvaltozo)
+if ciklusvaltozo>=len(verseny_adatok):
+    print("MINDEKI SZERZETT PONTOT A 2024-ES SZEZON ALATT😎")
+else:
+    print("VAN OLYAN AKI NEM SZERZETT PONTOT A 2024-ES SZEZON ALATT😆")
+    
