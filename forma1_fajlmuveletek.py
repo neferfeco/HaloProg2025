@@ -17,8 +17,8 @@ except IOError as ex:
     3. [✔] Megszámolás
     4. [✔] Eldöntés 1
        [✔] Eldöntés 2
-    5. [] Maximum/minimum kiválasztás
-    6. [] Keresés (lineáris)
+    5. [✔] Maximum/minimum kiválasztás
+    6. [✔] Keresés (lineáris)
     
     7. [] Kiválogatás (külön, helyben)
     8. [] Szétválogatás
@@ -57,7 +57,6 @@ for i in range (1,len(verseny_adatok)):
 print(f"{db1} versenyző teljesített 300 pont felett")
 
 
-
 #4.1 Van-e 0 pntos versenyző?
 '''
 ciklusvaltozo=1
@@ -68,6 +67,8 @@ if ciklusvaltozo<len(verseny_adatok):
 else:
     print("Nincs 0 pontos versenyző")
 '''
+
+
 #4.2 Mindenki szerzett pontot a 2024-es szezon alatt?
 ciklusvaltozo=1
 while ciklusvaltozo<len(verseny_adatok) and int(verseny_adatok[ciklusvaltozo].split(",")[1])>0:
@@ -77,4 +78,39 @@ if ciklusvaltozo>=len(verseny_adatok):
     print("MINDEKI SZERZETT PONTOT A 2024-ES SZEZON ALATT😎")
 else:
     print("VAN OLYAN AKI NEM SZERZETT PONTOT A 2024-ES SZEZON ALATT😆")
+
+
+# 5. Ki vezeti a tabellát? (Maximumkiválasztás)
+max_ertek = int(verseny_adatok[1].split(",")[1])
+max_index = 1
+for i in range(2,len(verseny_adatok)):
+    if (int(verseny_adatok[i].split(",")[1]))>max_ertek:
+        max_index = i
+        max_ertek = int(verseny_adatok[i].split(",")[1])
+print(f"Ő vezet: {verseny_adatok[max_index].split(",")[0]}") 
+       
+#6. Kinek van 90 pontja?
+i=1
+while i<len(verseny_adatok) and int((verseny_adatok[i]).split(',')[1]) != 90:
+    i+=1
     
+if (i<len(verseny_adatok)):
+    print(f"{(verseny_adatok[i]).split(',')[0]}-nek/nak van 90 pontja.")
+else:
+    print("Nincs olyan akinek 90 pontja van.")
+ 
+ #7 Kik a Mercedes pilótái?
+db2=0
+merci=[]
+for i in range(1, len(verseny_adatok)):
+    if verseny_adatok[i].strip().split(",")[2]=="Mercedes":
+        merci.append(verseny_adatok[i].split(",")[0])
+        db2+=1
+print(merci)
+         
+ 
+
+ 
+ 
+ 
+         
