@@ -20,8 +20,8 @@ except IOError as ex:
     5. [✔] Maximum/minimum kiválasztás
     6. [✔] Keresés (lineáris)
     
-    7. [] Kiválogatás (külön, helyben)
-    8. [] Szétválogatás
+    7. [✔] Kiválogatás (külön, helyben)
+    8. [✔] Szétválogatás
     9. [] Unió
     10.[] Metszet
     
@@ -98,8 +98,9 @@ if (i<len(verseny_adatok)):
     print(f"{(verseny_adatok[i]).split(',')[0]}-nek/nak van 90 pontja.")
 else:
     print("Nincs olyan akinek 90 pontja van.")
+
  
- #7 Kik a Mercedes pilótái?
+#7 Kik a Mercedes pilótái?
 db2=0
 merci=[]
 for i in range(1, len(verseny_adatok)):
@@ -107,10 +108,23 @@ for i in range(1, len(verseny_adatok)):
         merci.append(verseny_adatok[i].split(",")[0])
         db2+=1
 print(merci)
-         
- 
 
- 
- 
+#8. Kik a Stake F1 Team Kick Sauber és a RB F1 Team pilótái?
+dby=0
+dbz=0
+y=[]
+z=[]
+for i in range(1, len(verseny_adatok)):
+        if verseny_adatok[i].strip().split(",")[2]=="Stake F1 Team Kick Sauber" or verseny_adatok[i].strip().split(",")[2]=="RB F1 Team" :
+            dby+=1
+            y.append(verseny_adatok[i].split(",")[0])
+        else:
+            dbz+=1
+            z.append(verseny_adatok[i].split(",")[0])            
+print(y,z)
+
+
+
+
  
          
