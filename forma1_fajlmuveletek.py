@@ -22,7 +22,7 @@ except IOError as ex:
     
     7. [✔] Kiválogatás (külön, helyben)
     8. [✔] Szétválogatás
-    9. [] Unió
+    9. [✔] Unió
     10.[] Metszet
     
     11. Rendezés
@@ -107,7 +107,8 @@ for i in range(1, len(verseny_adatok)):
     if verseny_adatok[i].strip().split(",")[2]=="Mercedes":
         merci.append(verseny_adatok[i].split(",")[0])
         db2+=1
-print(merci)
+for i in merci:
+    print(i)
 
 #8. Kik a Stake F1 Team Kick Sauber és a RB F1 Team pilótái?
 dby=0
@@ -122,6 +123,55 @@ for i in range(1, len(verseny_adatok)):
             dbz+=1
             z.append(verseny_adatok[i].split(",")[0])            
 print(y,z)
+
+
+#--------------------------------------------------------------------
+
+# 8.  Kik 1950 és 2024 közötti dobogosaik?
+verseny_adatok19=[]
+verseny_adatok20=[]
+try:
+    with open("F1_1950-1999.csv", encoding="utf-8") as fajl:
+        for sor in fajl:
+            verseny_adatok19.append(sor)  
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")      
+try:
+    with open("F1_2000-2024.csv", encoding="utf-8") as fajl:
+        for sor in fajl:
+            verseny_adatok20.append(sor)        
+
+
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")
+
+u=[]
+for i in range(1,len(verseny_adatok19)):
+    u.append(verseny_adatok19[i])
+for j in range(1,len(verseny_adatok20)):
+    u.append(verseny_adatok20[j])
+for i in u:
+    print(i)    
+    
+#9. Kik voltaka dobogón a 20. században és a 21. században is?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
