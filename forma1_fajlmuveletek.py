@@ -23,7 +23,7 @@ except IOError as ex:
     7. [✔] Kiválogatás (külön, helyben)
     8. [✔] Szétválogatás
     9. [✔] Unió
-    10.[] Metszet
+    10.[✔] Metszet
     
     11. Rendezés
        [] egyszerű cserés
@@ -127,7 +127,7 @@ print(y,z)
 
 #--------------------------------------------------------------------
 
-# 8.  Kik 1950 és 2024 közötti dobogosaik?
+# 9.  Kik 1950 és 2024 közötti dobogosaik?
 verseny_adatok19=[]
 verseny_adatok20=[]
 try:
@@ -153,9 +153,20 @@ for j in range(1,len(verseny_adatok20)):
 for i in u:
     print(i)    
     
-#9. Kik voltaka dobogón a 20. században és a 21. században is?
-
-
+#10. Kik voltak dobogón a 20. században és a 21. században is?
+m=[]
+dbm=0
+for i in range(1,len(verseny_adatok19)):
+    j=1
+    while j < len(verseny_adatok20) and verseny_adatok19[i].split(',')[2] != verseny_adatok20[j].split(',')[2]:
+        j+=1
+    if j < len(verseny_adatok20):
+        if verseny_adatok19[i].split(',')[2]  not in m:
+            m.append(verseny_adatok19[i].split(',')[2])
+            dbm+=1
+        
+for i in m:
+    print(i)
 
 
 
