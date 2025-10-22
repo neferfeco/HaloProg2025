@@ -26,7 +26,7 @@ except IOError as ex:
     10.[✔] Metszet
     
     11. Rendezés
-       [] egyszerű cserés
+       [✔] egyszerű cserés
        [] buborékos
        [] minimumkiválasztásos
     """
@@ -41,21 +41,21 @@ for i in range(1,len(verseny_adatok)):
 atlag=pontszam/db
 print(f"Pontszámok átlaga: {atlag}")
 
-
+print('----------------------------------------------------------------------')
 #2. Mi a bekért versenyzo adatai?
 pilota=input("Kérek egy pilótát:")
 ciklusvaltozo=1
 while verseny_adatok[ciklusvaltozo].split(",")[0]!=pilota:
     ciklusvaltozo+=1
 print(verseny_adatok[ciklusvaltozo])
-    
+print('----------------------------------------------------------------------')   
 #3. Hány versenyző teljesitett 300 pont felett?
 db1=0
 for i in range (1,len(verseny_adatok)):
     if (int(verseny_adatok[i].split(",")[1])>300):
         db1+=1
 print(f"{db1} versenyző teljesített 300 pont felett")
-
+print('----------------------------------------------------------------------')
 
 #4.1 Van-e 0 pntos versenyző?
 '''
@@ -78,7 +78,7 @@ if ciklusvaltozo>=len(verseny_adatok):
     print("MINDEKI SZERZETT PONTOT A 2024-ES SZEZON ALATT😎")
 else:
     print("VAN OLYAN AKI NEM SZERZETT PONTOT A 2024-ES SZEZON ALATT😆")
-
+print('----------------------------------------------------------------------')
 
 # 5. Ki vezeti a tabellát? (Maximumkiválasztás)
 max_ertek = int(verseny_adatok[1].split(",")[1])
@@ -88,7 +88,7 @@ for i in range(2,len(verseny_adatok)):
         max_index = i
         max_ertek = int(verseny_adatok[i].split(",")[1])
 print(f"Ő vezet: {verseny_adatok[max_index].split(",")[0]}") 
-       
+print('----------------------------------------------------------------------')       
 #6. Kinek van 90 pontja?
 i=1
 while i<len(verseny_adatok) and int((verseny_adatok[i]).split(',')[1]) != 90:
@@ -98,7 +98,7 @@ if (i<len(verseny_adatok)):
     print(f"{(verseny_adatok[i]).split(',')[0]}-nek/nak van 90 pontja.")
 else:
     print("Nincs olyan akinek 90 pontja van.")
-
+print('----------------------------------------------------------------------')
  
 #7 Kik a Mercedes pilótái?
 db2=0
@@ -109,7 +109,7 @@ for i in range(1, len(verseny_adatok)):
         db2+=1
 for i in merci:
     print(i)
-
+print('----------------------------------------------------------------------')
 #8. Kik a Stake F1 Team Kick Sauber és a RB F1 Team pilótái?
 dby=0
 dbz=0
@@ -123,7 +123,7 @@ for i in range(1, len(verseny_adatok)):
             dbz+=1
             z.append(verseny_adatok[i].split(",")[0])            
 print(y,z)
-
+print('----------------------------------------------------------------------')
 
 #--------------------------------------------------------------------
 
@@ -151,8 +151,8 @@ for i in range(1,len(verseny_adatok19)):
 for j in range(1,len(verseny_adatok20)):
     u.append(verseny_adatok20[j])
 for i in u:
-    print(i)    
-    
+    print(i.strip())    
+print('----------------------------------------------------------------------')
 #10. Kik voltak dobogón a 20. században és a 21. században is?
 m=[]
 dbm=0
@@ -167,11 +167,20 @@ for i in range(1,len(verseny_adatok19)):
         
 for i in m:
     print(i)
+print('----------------------------------------------------------------------')
 
+#11. Növekvő pont sorrend
+for i in range(1,len(verseny_adatok)-1):
+    for j in range(i+1,len(verseny_adatok)):
+        if int(verseny_adatok[i].split(",")[1])>int(verseny_adatok[j].split(",")[1]):
+            seged=verseny_adatok[i]
+            verseny_adatok[i]=verseny_adatok[j]
+            verseny_adatok[j]=seged
+            
+for i in verseny_adatok:
+    print(i.strip())
 
-
-
-
+print('----------------------------------------------------------------------')
 
 
 
